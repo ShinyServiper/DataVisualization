@@ -4,7 +4,7 @@ import dash
 from dash import html, dcc
 from dash.dependencies import Input, Output
 import pandas as pd                # for working with DataFrames
-import plotly.express as px                               
+import plotly.express as px        # for plotting; alias created                        
 import os                          # imported for interacting with the operating system
 from datetime import datetime      # imported to work with date strings
 import geopandas
@@ -229,6 +229,7 @@ app.layout = html.Div(style={'backgroundColor': colors['background'],"width":"10
     Output("fig1","figure"),
     Input("dropdown","value"),
     Input("dropdown2","value"))
+
 def update_graph(state,metric):
     metric_string='%s' %title_mappings[metric]
     metric_string2="Date: %{x} <br>"+metric_string+": %{y}"
